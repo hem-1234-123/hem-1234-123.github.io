@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="Stylesheet" href="styles.css">
+  <script src="script.js"></script>
+
+</head>
+<body>
+  <div class="logincontainer">
+    <input type="text" placeholder="Enter user name" id="username"/>
+    <input type="password" placeholder="Enter password" id="password"/>
+    <button onclick="login()">submit</button>
+    <span id="loginmessage">login message</span>
+  </div>
+
+  <div class="calculator">
+    <input type="number" placeholder="num1" id="num1"/>
+    <input type="number" placeholder="num2" id="num2"/>
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="mul()">*</button>
+    <button onclick="divi()">/</button>
+    <span id="operationmessage">opetation</span>
+  </div>
+</body>
+<script>
+  function login(){
+    console.log("okay proceed")
+    let username=document.getElementById("username").value
+    let password=document.getElementById("password").value
+
+    if(username==="ADMIN" && password=== "ADMIN"){
+      console.log("login successful")
+      document.getElementById("loginmessage").innerText="login successful"
+    }
+    else{
+      console.log("login failed")
+      document.getElementById("loginmessage").innerText="login failed"
+
+    }
+  }
+
+  function add(){
+    let num1=Number(document.getElementById("num1").value);
+    let num2=Number(document.getElementById("num2").value);
+    let sum=num1+num2
+    console.log("addition: ")
+    document.getElementById("operationmessage").textContent="sum "+sum
+  }
+ 
+  function sub(){
+    let num1=document.getElementById("num1").value
+    let num2=document.getElementById("num2").value
+    let sub=parseInt(num1)-num2
+    console.log("subtraction: ")
+    document.getElementById("operationmessage").innertext="sub"
+  }
+
+  function mul(){
+    let num1=document.getElementById("num1").value
+    let num2=document.getElementById("num2").value
+    let mul=num1*num2
+    console.log("multiplication: "+mul)
+    document.getElementById("operationmessage").innertext="mul"
+  }
+
+  function divi(){
+    let num1=document.getElementById("num1").value
+    let num2=document.getElementById("num2").value
+    let divin=num1/num2
+    console.log("division: ")
+    document.getElementById("operationmessage").innertext="divin"
+  }
+
+
+</script>
+</html>
